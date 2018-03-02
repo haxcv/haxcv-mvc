@@ -1,0 +1,38 @@
+<?
+ jsH.require("./views/header.html"); 
+?>
+
+
+<div class="topic-view" style="text-align: center; background:no-repeat;">
+<h2 >Login page </h2>
+	<form class="frm" method="POST" fn-ajax action="http://{@this.host@}/login/v" >
+		<label>
+			<div>
+				<input type="text" name="user" placeholder="Username ">
+			</div>
+		</label>
+		<label>
+			<div>
+				<input type="password" name="pass" placeholder="Password ">
+			</div>
+		</label>
+		<label>
+			<div sub >
+				<button>login</button>
+			</div>
+		</label>
+		<p>have not  an account ? </p>
+		<label>
+			<a href="http://{@this.host@}/signup" fn-spa="root-view">
+				<div sub >
+				Create Account 
+				</div>
+			</a>
+		</label>
+	</form>
+</div>
+
+
+<?
+ jsH.require("./views/footer.html"); 
+?>

@@ -1,0 +1,23 @@
+{
+  "name": "haxcv-mvc",
+  "version": "1.0.1",
+  "description": "haxcv back End templates Engine using jsH (MVC)",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",    
+    "noCompile":"node  main.js --no-compile"
+  },  
+  "keywords": [
+    "cgi",
+    "mvc",
+    "tmp",
+    "engine"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haxcv/haxcv-mvc.git"
+  },
+  "author": "Manassa Joseph",
+  "license": "MIT",
+  "devDependencies": {}
+}

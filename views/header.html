@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html root-view fn-before="progress.show" fn-after="progress.hide" >
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="haxcvJs">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+	<?
+	{{
+		<script type="text/javascript" src="http://{{+this.host+}}/public/js/libs-x/haxcv.1.0.1.js"></script>
+		<script type="text/javascript" src="http://{{+this.host+}}/public/js/style.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://{{+this.host+}}/public/css/style.css">	
+	}}
+	?>
+	<title>{@this.title@} </title>
+</head>
+<body>
+	<header v-header >
+		<nav>						
+				<a href="http://{@this.host@}" fn-spa="root-view">
+				   <li>
+					home
+				   </li>
+				</a>			
+				<a href="http://{@this.host@}/login" fn-spa="root-view">
+				   <li>
+					login
+				   </li>
+				</a>
+				<a href="http://{@this.host@}/signup" fn-spa="root-view">
+				   <li>
+					Signup
+				   </li>
+				</a>
+				<a href="https://haxcv.org/donate" target="blank">
+				   <li>
+					Donate
+				   </li>
+				</a>
+				<a href="https://github.com/haxcv/haxcv-mvc" target="blank">
+				   <li>
+					Github
+				   </li>
+				</a>
+		</nav>
+	</header>
+	<li page-progress ></li>
+	<div v-content>		

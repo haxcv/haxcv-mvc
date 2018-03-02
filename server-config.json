@@ -1,0 +1,29 @@
+{
+	"Indexs":"Allow-View",
+	"Indexs-pages":{
+	       "index.html":true,
+	       "home.html":true, 
+	       "default.html":true,
+	       "index.jsh":true,
+	       "haxcv.html":true 
+	 },
+	"Disabled-Directory":{
+	   "libs":true,
+	   "controllers":true,
+	   "views":true,
+	   "models":true
+	},
+	"listen":{
+		"port":8000,
+		"host":"127.0.0.1"
+	},
+	"headers":{
+     "Server":"haxcv back-end v1.0.1 MVC ",
+     "Access-Control-Allow-Origin":"*",
+     "Author":"Haxcv.org",
+     "mode":"Templates Engine using jsH "
+	},
+   "compile":{
+   	   "enabled-jsh":true        
+   }	 
+}

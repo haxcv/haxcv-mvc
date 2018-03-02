@@ -1,0 +1,99 @@
+body{
+	margin: 0;
+	background: #eee;	
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+	font-family:museo-sans,Avenir,HelveticaNeue,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro W3,Hiragino Kaku Gothic ProN,HiraKakuProN-W3,Hiragino Sans GB W3,Meiryo,Noto Sans CJK KR,Apple SD Gothic Neo,NanumBarunGothic,NanumGothic,ë‚˜ëˆ”ê³ ë”•,Malgun Gothic,sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+[haxcv-logo]{
+	width: 200px;
+	border-radius: 100%;
+}
+
+
+[v-header]
+{
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: #222;
+	top: 0px;
+	left: 0px;
+	text-align: left;
+}
+
+
+[v-content]{
+	margin: 100px auto;
+	width: 85%;
+	
+	padding: 10px;
+}
+
+header li{
+	list-style: none;
+	color: #fff;	
+	display: inline-block;
+	width: 100px;
+	height: auto;
+	height: 100%;
+	line-height: 60px;
+	text-align: center;
+}
+header li:hover{
+	background: rgba(0,0,0,0.5);
+}
+
+[page-progress]{
+	position: fixed;
+	top: 60px;
+	height: 5px;
+	background: #0c559f;
+	border-radius: 5px;
+	width: 0px;
+	transition: width 0.5s cubic-bezier(.68,-0.55,.27,1.55) 0s;
+}
+
+
+.topic-view{
+	width: 90%;
+	background: #fff;
+	padding: 10px;
+	margin: 20px auto;
+	text-align: left;
+	border-radius: 3px;r
+	color: #ccc;
+}
+a:link , a:visited{color: #0c559f; text-decoration: none; font-size: 17px; font-weight: 400;}
+
+
+.frm{
+	width: 50%;
+	padding: 5px;
+	margin: 10px auto;
+
+}
+.frm div{
+	width: 90%;
+	border:solid 1px #ccc;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 2px auto;
+	text-align: center;
+	background:#fff;
+}
+.frm div button{ background: no-repeat; border:0; color: #fff; cursor: pointer;}
+.frm [sub]{
+ background:#0c559f;
+ color: #fff;
+ border:solid 1px #0c559f;
+ cursor: pointer;
+}
+.frm div input{
+  width: 90%;
+  padding: 5px;
+  margin: 0px auto;
+  border:0;
+}

@@ -1,0 +1,36 @@
+<?
+ jsH.require("./views/header.html"); 
+?>
+
+<h2>Welcome to haxcv Templates Engine MVC  </h2>
+<img src="./public/img/haxcv.svg" haxcv-logo />
+
+<Component fn-init myApp >
+   {%    
+       {{        
+        <div class="topic-view" style="background: no-repeat;">
+          what is Haxcv ?
+
+              Haxcv is Javascript framework based on the idea of ease of work and flexibility in the implementation of projects with new features that enable you to write HTML with Javascript through a technique called jsH It also contains all the components you need as a developer
+              what should I know first ?
+              You must have a background or knowledge about HTML, Javascript, CSS
+              You must have a background or knowledge about JSON
+              what it's new ?
+
+              with jsH you can control with content by Javascript Expression
+              another word you don't need to use DOM Selector to render Content
+              jsH is working like server side language .
+              anything in Javascript can be use in jsH 
+          <p><a href="https://haxcv.org">https://haxcv.org</a></p>                    
+          <p><a href="https://haxcv.com/haxcv/haxcv-mvc">https://haxcv.com/haxcv/haxcv-mvc</a></p>   
+          <p>Node : {@process.version@}</p>                 
+        </div>
+       }}    
+   	%}
+</Component>
+
+
+
+<?
+ jsH.require("./views/footer.html"); 
+?>
