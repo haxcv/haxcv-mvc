@@ -9,6 +9,13 @@ your dealing with nodejs MVC template with jsH
 >  models 
 
 > views 
+
+### required modules :
+```
+ npm install haxcv-jsh
+ npm install mysql
+ npm install mime-types
+```
 ### create controller
 ```
  to create new controller go to controllers/boot.js and add new method 
