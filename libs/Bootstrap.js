@@ -19,14 +19,12 @@ class Bootstrap
 	           switch(args[2])
 	           {
 	           	 case 'start':
-	           	     this.__init__(args[3]);
-	           	     console.log(args[3])
+	           	     this.__init__(args[3]);	           	     
 	           	 break;
 	           	 case 'serv':
 	           	     if(args[3])
 	           	     {
-	           	     	Config.serv(args);
-	           	     	console.log(args[3])
+	           	     	Config.serv(args);	           	     	
 	           	     }else{
 	           	     	Config.help();
 	           	     }
@@ -84,16 +82,20 @@ class Bootstrap
 
 		    var server = http.createServer((req , res) => {		    	
 		    	var rURL = req.url.split("?")[0];
+		    	var POST = {};
 		    	controller.res  = res;
 		    	controller.req  = req;	
 		    	req.on('data' , (d) =>{                        
 		            controller.View.export({'POST':  JSON.stringify(this.parseQuery(d.toString()) )});
+		            POST = this.parseQuery(d.toString());
 		        });		    	
-		    	controller.View.export({'COOKIE' : JSON.stringify(this.getCookie(req))});
-		    	controller.View.export({'COOKIE' : JSON.stringify(this.getCookie(req))});
+		    	controller.View.export({'COOKIE' : JSON.stringify(this.getCookie(req))});		    	
 		    	controller.View.export({'GET'    : JSON.stringify(this.parseQuery(url.parse(req.url).query))});
 		    	controller.View.export({'HEADER' : JSON.stringify(req.headers)});	
-		    	controller.View.export({'host'   : req.headers.host});		    	
+		    	controller.View.export({'host'   : req.headers.host});	
+
+		    	
+		    			    	
 
 		    	for(var k in this.headers)
 		    	{
@@ -121,6 +123,13 @@ class Bootstrap
                     			 		'application/typescript':true
                     			 	};
                     			 	var type = mime.lookup("."+(req.url.split("?")[0]));
+                    			 	haxcv['COOKIE'] = this.getCookie(req);		    
+								    haxcv['GET']  =  this.parseQuery(url.parse(req.url).query);
+								    haxcv['POST']  =  POST;
+								    haxcv['HEADER'] = req.headers;	                       
+								    haxcv['host'] =  req.headers.host;
+								    haxcv.response = res;
+								    haxcv.request = req;
                     			 	var iSo = type in ts  ? d.toString() : haxcv.compile(d.toString());
 	 							   res.end(this.compile['enabled-jsh'] ?  (iSo) : d.toString());
 	 							  }else{
@@ -148,6 +157,13 @@ class Bootstrap
 
                     				}
                     				if(i in this.indexs){
+                    					haxcv['COOKIE'] = this.getCookie(req);		    
+									    haxcv['GET']  =  this.parseQuery(url.parse(req.url).query);
+									    haxcv['POST']  =  POST;
+									    haxcv['HEADER'] = req.headers;	                       
+									    haxcv['host'] =  req.headers.host;
+									    haxcv.response = res;
+									    haxcv.request = req;
                                       fs.readFile("."+(rURL)+"/"+i , (err , ds)=>{
                                       	res.end(this.compile['enabled-jsh'] ?  haxcv.compile(ds.toString()) :  ds.toString()); 										
                                       });
@@ -228,17 +244,17 @@ class Bootstrap
 
 			getCookie(str)
 		  {
+
 		    var d = str.headers.cookie || "";
 		    var s = d.split(";");
-		    var c = {};
+		    var c = {};		    
 		    try
 		    {		    	
 			     s.forEach( (ea) => {
-			        ea.split("=")[0] = ea.split("=")[1];
+			        c[ea.split("=")[0]] = ea.split("=")[1];
 			     });
 		     }catch(er)
 		     {
-
 		     }
 
 		    return c;
@@ -251,12 +267,12 @@ class Bootstrap
 		    {		    	
 		    	var s = str.split("&");
 			     s.forEach((ea)=>{
-			        ea.split("=")[0] = ea.split("=")[1];
+			        c[ea.split("=")[0]] = ea.split("=")[1];
 			     });
 		     }catch(er)
 		     {
 		     	
-		     }		  
+		     }		  		  	
 		  return c;
 		}
 
