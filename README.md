@@ -30,7 +30,7 @@ then create index file with new folder index.html
 by creating new method with models/init.js or create new file as you want 
 ```
 
-### ad new Method 
+### add new Method 
 ```javascript
 login(callback){
 
@@ -47,4 +47,18 @@ login(callback){
 
 }
 ```	
+### call models from controller
+```javascript
+   newMethod(){  
+      let init = this.Model.call("init");      
+      init.login((result)=>{
+         if(result == 'error'){
+	   this.res.end("incorrect data");
+	 }else{
+	   this.res.end("logged successfully");
+	 }
+      });
+  }
+ ```
+
 
