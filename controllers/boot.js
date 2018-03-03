@@ -43,17 +43,17 @@ class boot {
 
 		getCookie(str)
 		  {
+
 		    var d = str.headers.cookie || "";
 		    var s = d.split(";");
-		    var c = {};
+		    var c = {};		    
 		    try
 		    {		    	
 			     s.forEach( (ea) => {
-			        ea.split("=")[0] = ea.split("=")[1];
+			        c[ea.split("=")[0]] = ea.split("=")[1];
 			     });
 		     }catch(er)
 		     {
-
 		     }
 
 		    return c;
@@ -66,12 +66,12 @@ class boot {
 		    {		    	
 		    	var s = str.split("&");
 			     s.forEach((ea)=>{
-			        ea.split("=")[0] = ea.split("=")[1];
+			        c[ea.split("=")[0]] = ea.split("=")[1];
 			     });
 		     }catch(er)
 		     {
 		     	
-		     }		  
+		     }		  		  	
 		  return c;
 		}
 
