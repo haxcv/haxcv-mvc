@@ -60,5 +60,36 @@ login(callback){
       });
   }
  ```
+  you can also pass data to model
+ 
+ ### export data to views 
+ ```javascript 
+ newMethod(){ 
+      this.View.export({"data": "this data page "});
+      this.View.export({"text": "welcome to new method"});
+      this.View.render('newMethod/index');
+  }
+  ```
+  > vviews/newMethod/index.html
+  ```html
+  <?
+ jsH.require("./views/header.html"); 
+?>
+
+
+<div class="topic-view">
+<h2 >newMethhod page </h2>
+<h3>{@this.data@}</h3>
+ <?
+ 
+ print(this.text);
+ 
+ ?>
+</div>
+
+
+<?
+ jsH.require("./views/footer.html"); 
+?>
 
 
