@@ -70,7 +70,7 @@ login(callback){
       this.View.render('newMethod/index');
   }
   ```
-  > vviews/newMethod/index.html
+  > views/newMethod/index.html
   ```html
   <?
  jsH.require("./views/header.html"); 
