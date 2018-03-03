@@ -47,7 +47,7 @@ login(callback){
 	  pass:""
 	};
      var sql = require("mysql");
-     var db = sql.createConnection(this.config);
+     var db = sql.createConnection(config);
      db.query("SELECT * FROM ``.`` WHERE user='user' and pass='123' " , (e , r) =>{
              callback(e ? 'error' : r);
       });
