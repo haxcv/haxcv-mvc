@@ -114,40 +114,10 @@ Options:
   
   [examples]: 
   		npm start -v 
-  		npm start --compUsage: npm start [options] [ command ] [arguments] 
-       npm start serv script.jsh [arguments] 
-
-Options:
-  -v, --version         print haxcv version
-  -c, --compile         compile script    
-  -w, --write           write file  
-  -s, --start           start MVC mode 
-  -r, --serv            serv from file 
-  --no-compile          disable jsH
-  
-  [examples]: 
-  		npm start -v 
   		npm start --compile script.jsh
   		npm start --compile script.jsh -w out.html
   		npm start serv script.jsh --port 8080
   		npm start serv script.jsh --no-compile
   		npm start start --no-compile
   
-
-
-
-
-Documentation can be found at https://haxcv.org/cli
-ile script.jsh
-  		npm start --compile script.jsh -w out.html
-  		npm start serv script.jsh --port 8080
-  		npm start serv script.jsh --no-compile
-  		npm start start --no-compile
-  
-
-
-
-
-Documentation can be found at https://haxcv.org/cli
-
 ```
